@@ -5,7 +5,7 @@ If you want to download all videos from OneDrive, please contact me <18020100027
 ## Requirements
 - Python 3.6
 - [youtube-dl](https://github.com/ytdl-org/youtube-dl)
-- ffmpeg
+- [ffmpeg](http://ffmpeg.org/)
 
 ## Usage
 
@@ -47,6 +47,33 @@ This action is very slow, so I split one big annotation file(train_test_val_merg
 python mergeAnnotation_split.py
 python mergeAnnotation.py
 python mergesplitpkl.py
+```
+Annotation format would be:  
+```python
+    # record:dictionary =
+    # {
+    #     "ImagePath":string
+    #     "YoutubeId":string
+    #     "FrameTime":int in us(microsecond)/1000000
+    #     "Boxes":list = [
+    #                 [TopLeftX, TopLeftY, Width, Height, PlayerId]:list,   percentage, not absolute size
+    #                 [TopLeftX, TopLeftY, Width:float, Height:float, PlayerId:string],
+    #                 ...
+    #                 [TopLeftX:float, TopLeftY:float, Width, Height, PlayerId],
+    #             ]
+    #     "Event":dictionary = {
+    #         'VideoWidth': int,
+    #         'VideoHeight': int,
+    #         'ClipStartTime':float,                                  time in ms(millisecond)/1000
+    #         'ClipEndTime': float,                                   time in ms(millisecond)/1000
+    #         'EventStartTime':float ,      -1 if no event else float time in ms(millisecond)/1000
+    #         'EventEndTime': float,        -1 if no event else float time in ms(millisecond)/1000
+    #         'EventStartBallX':float ,     -1 if no event else float (not used in this paper)
+    #         'EventStartBallY':float ,     -1 if no event else float (not used in this paper)
+    #         'EventLabel':string ,         NOEVENT if no event else label
+    #         'TrainValOrTest':string       train,test,val
+    #     }
+    # }
 ```
 ## References
 - [[1]Detecting Events and Key Actors in Multi-Person Videos](https://arxiv.org/abs/1511.02917)
