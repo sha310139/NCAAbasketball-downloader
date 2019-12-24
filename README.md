@@ -1,5 +1,5 @@
 # NCAAbasketball-downloader
-Download all videos from Stanford's [NCAA basketball dataset](http://basketballattention.appspot.com/). Moreover, you can use this library to clean incorrect data, extract frames from videos as per the sample rate in the paper [Detecting Events and Key Actors in Multi-Person Videos](https://arxiv.org/abs/1511.02917) and merge object detection & event detection annotations into a single pkl file for further multitask research.
+Download all videos from Stanford's [NCAA basketball dataset](http://basketballattention.appspot.com/). Moreover, you can use this library to clean incorrect data, extract frames from videos as per the sample rate in the paper [Detecting Events and Key Actors in Multi-Person Videos](https://arxiv.org/abs/1511.02917) and merge object detection & event detection annotations into a single pkl file for further multitask research. Since the codes are not well organized, please modify the codes yourself.
 
 ## Requirements
 - Python 3.6
