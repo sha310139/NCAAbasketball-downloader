@@ -75,5 +75,8 @@ Annotation format would be:
     #     }
     # }
 ```
+
+### class NCAABasketballDataset(torch.utils.data.Dataset)
+[A possible Dataset class for pytorch](https://github.com/jszgz/FCOS-YOOO/blob/master/fcos_core/data/datasets/ncaa.py)
 ## References
 - [[1]Detecting Events and Key Actors in Multi-Person Videos](https://arxiv.org/abs/1511.02917)
