@@ -3,17 +3,39 @@ Download all videos from Stanford's [NCAA basketball dataset](http://basketballa
 
 ## Requirements
 - Python 3.6
-- youtube-dl
+- [youtube-dl](https://github.com/ytdl-org/youtube-dl)
 - ffmpeg
 
 ## Usage
 
 **WARNING：** Before you start any download from YouTube, please be sure, that you have checked [YouTube Terms Of Service](https://www.youtube.com/static?template=terms) and you are compliant. Especially check section 5.H.  
 
-### Download all videos:
+### Download all videos(youtube-dl):
 This requires 112GB of network traffic and disk space.  
-``python
+```python
 python DownloadDataset.py
 ```
   
-### Extract:
+### Extract frames from videos (Multi Thread, ffmpeg based):
+**WARNING：** Video will be resampled to 4.995 frames per second, as the origional fps is 29.97.  
+```python
+python extractraw.py
+```
+
+### Clean the dataset:
+**WARNING：** This action will delete wrong annotations. Specifically, wrong annotations are those:
+1. With '-1' lable in EventStartTime ( Although the author think 'steal success' has same EventStartTime and EventEndTime)
+2. 'EventStartTime' and 'EventEndTime' not reasonable values as per 'ClipStartTime' and 'ClipEndTime'  
+```python
+    if ClipStartTime <= ClipEndTime:
+        if ClipStartTime <= EventStartTime:
+            if EventStartTime <= ClipEndTime:
+                if ClipStartTime <= EventEndTime:
+                    if EventEndTime <= ClipEndTime:
+                        if EventStartTime <= EventEndTime:
+                            return False
+    return True
+```
+```python
+python SortAndDelete.py
+```
