@@ -27,6 +27,7 @@ python extractraw.py
 1. With '-1' lable in EventStartTime ( Although the author think 'steal success' has same EventStartTime and EventEndTime)
 2. 'EventStartTime' and 'EventEndTime' not reasonable values as per 'ClipStartTime' and 'ClipEndTime'  
 ```python
+def wrong_row(row):
     if ClipStartTime <= ClipEndTime:
         if ClipStartTime <= EventStartTime:
             if EventStartTime <= ClipEndTime:
@@ -39,3 +40,12 @@ python extractraw.py
 ```python
 python SortAndDelete.py
 ```
+### Merge object detection & event detection annotations to frame by frame (for Multitask research, which I do):
+This action is very slow, so I split one big annotation file(train_test_val_merged_detections_v2_ts_fixed_head.csv) to 20 splits and do them simultaneously.
+```python
+python mergeAnnotation_split.py
+python mergeAnnotation.py
+python mergesplitpkl.py
+```
+## References
+- [[1]Detecting Events and Key Actors in Multi-Person Videos](https://arxiv.org/abs/1511.02917)
