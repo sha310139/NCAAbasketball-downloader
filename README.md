@@ -19,6 +19,7 @@ python DownloadDataset.py
   
 ### Extract frames from videos (Multi Thread, ffmpeg based):
 **WARNING：** Video will be resampled to 4.995 frames per second, as the origional fps is 29.97.  
+Set proper threading.Semaphore(**n**) in terms of your CPU and DISK performance.  
 ```python
 python extractraw.py
 ```
