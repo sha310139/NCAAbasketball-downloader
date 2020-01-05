@@ -1,6 +1,5 @@
 # NCAAbasketball-downloader
 Download all videos from Stanford's [NCAA basketball dataset](http://basketballattention.appspot.com/). Moreover, you can use this library to clean incorrect data, extract frames from videos as per the sample rate in the paper [Detecting Events and Key Actors in Multi-Person Videos](https://arxiv.org/abs/1511.02917) and merge object detection & event detection annotations into a single pkl file for further multitask research. I also implemented a possible Dataset class for pytorch. Since the codes are not well organized, please modify the codes yourself.   
-If you want to download all videos from OneDrive, please contact me <18020100027@pop.zjgsu.edu.cn>.
 
 ## Requirements
 - Python 3.6
@@ -13,6 +12,8 @@ If you want to download all videos from OneDrive, please contact me <18020100027
 
 ### Download all videos(youtube-dl):
 This requires 112GB of network traffic and disk space.  
+You can download all videos from [百度网盘](https://pan.baidu.com/s/1YECjdnjmwi_0T-gBXNoGQQ)
+If you want to download all videos from OneDrive, please contact me <18020100027@pop.zjgsu.edu.cn>.  
 ```python
 python DownloadDataset.py
 ```
