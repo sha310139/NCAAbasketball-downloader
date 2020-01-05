@@ -12,8 +12,7 @@ Download all videos from Stanford's [NCAA basketball dataset](http://basketballa
 
 ### Download all videos(youtube-dl):
 This requires 112GB of network traffic and disk space.  
-You can download all videos from [百度网盘](https://pan.baidu.com/s/1YECjdnjmwi_0T-gBXNoGQQ)  
-If you want to download all videos from OneDrive, please contact me.  
+You may also download all videos from [百度网盘](https://pan.baidu.com/s/1YECjdnjmwi_0T-gBXNoGQQ). If you want to download all videos from OneDrive, please contact me.  
 ```python
 python DownloadDataset.py
 ```
